@@ -441,6 +441,9 @@ blockquote footer {
   border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 10px;
   cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   transition: background .2s ease, border-color .2s ease;
 }
 
@@ -448,14 +451,15 @@ blockquote footer {
   background: rgba(255, 255, 255, .15);
 }
 
-.opcion:has(input:checked) {
+.opcion.seleccionada {
   background: rgba(232, 201, 143, .16);
   border-color: #e8c98f;
 }
 
-.opcion input {
-  margin-top: 6px;
-  accent-color: #e8c98f;
+
+.opcion:disabled {
+  cursor: default;
+  opacity: .8;
 }
 
 .respuesta {

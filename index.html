@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página sobre el Venerable Pedro Díez Gil de la Virgen del Carmen, escolapio (1913–1983).">
   <title>Venerable Pedro Díez Gil | Vida, obra y legado</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/xd.js" defer></script>
 </head>
 <body id="top">
 
@@ -144,12 +144,33 @@
       </div>
       <p>Te invitamos a seguir su ejemplo y a orar por su causa.</p>
 
-      <!-- Espacio reservado para la funcionalidad interactiva (fase 3) -->
-      <div id="zona-interactiva">
-        <h3>Zona interactiva</h3>
-        <button type="button" id="btn-interactivo">Próximamente</button>
-        <p id="resultado-interactivo" aria-live="polite"></p>
-      </div>
+      <!-- Fase 4: actividad interactiva desarrollada con JavaScript -->
+      <section id="zona-interactiva" class="quiz" aria-labelledby="titulo-quiz">
+        <div class="quiz-intro">
+          <span class="etiqueta-seccion">Poné a prueba lo aprendido</span>
+          <h3 id="titulo-quiz">¿Cuánto sabés sobre Pedro Díez Gil?</h3>
+          <p>Respondé estas preguntas sobre su vida, su labor educativa y su camino a los altares.</p>
+        </div>
+        <div id="quiz-contenido">
+          <div class="quiz-progreso">
+            <span id="quiz-contador">Pregunta 1 de 5</span>
+            <span id="quiz-puntaje">Aciertos: 0</span>
+          </div>
+          <div class="barra-progreso" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" id="barra-progreso">
+            <span id="barra-progreso-valor"></span>
+          </div>
+          <h4 id="pregunta" tabindex="-1"></h4>
+          <div id="opciones" class="opciones"></div>
+          <p id="respuesta" class="respuesta" aria-live="polite"></p>
+          <button type="button" id="btn-responder" class="boton-quiz" disabled>Comprobar respuesta</button>
+          <button type="button" id="btn-siguiente" class="boton-quiz boton-secundario" hidden>Siguiente pregunta</button>
+        </div>
+        <div id="quiz-final" class="quiz-final" hidden aria-live="polite">
+          <h4>¡Actividad completada!</h4>
+          <p id="resultado-final"></p>
+          <button type="button" id="btn-reiniciar" class="boton-quiz">Volver a intentar</button>
+        </div>
+      </section>
     </section>
 
   </main>

@@ -132,8 +132,6 @@ main > section {
   max-height: 390px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 140px 140px 16px 16px;
-  box-shadow: 14px 14px 0 rgba(181, 138, 69, .18);
 }
 
 figcaption {

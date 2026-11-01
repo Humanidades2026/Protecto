@@ -1,0 +1,636 @@
+/* =========================================================
+   FASE 3 — ESTILOS CSS
+   Proyecto: Rostros de la Santidad Escolapia
+   Personaje: Venerable Pedro Díez Gil
+   ========================================================= */
+
+:root {
+  --azul: #173b5e;
+  --azul-profundo: #102b45;
+  --dorado: #b58a45;
+  --crema: #f7f4ed;
+  --blanco: #ffffff;
+  --texto: #263746;
+  --texto-suave: #627181;
+  --borde: #e4e8eb;
+  --sombra: 0 14px 38px rgba(20, 43, 64, .09);
+  --radio: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--azul);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 4px;
+}
+
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 82px;
+  padding: 12px clamp(20px, 5vw, 76px);
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 5px 22px rgba(16, 43, 69, .05);
+  backdrop-filter: blur(12px);
+}
+
+.escudo {
+  width: 58px;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu a {
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--azul-profundo);
+  font-family: Arial, sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+#menu a:hover {
+  color: var(--dorado);
+}
+
+main {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+main > section {
+  margin: 42px 0;
+  padding: clamp(26px, 5vw, 58px);
+  background: var(--blanco);
+  border: 1px solid rgba(23, 59, 94, .06);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+#inicio {
+  display: grid;
+  grid-template-columns: minmax(220px, .78fr) 1.4fr;
+  align-items: center;
+  column-gap: clamp(28px, 5vw, 64px);
+  row-gap: 12px;
+  min-height: 470px;
+  background: linear-gradient(135deg, #fff 0%, #f3f0e8 100%);
+}
+
+#inicio figure {
+  grid-row: span 4;
+  margin: 0;
+}
+
+#inicio figure img {
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 140px 140px 16px 16px;
+  box-shadow: 14px 14px 0 rgba(181, 138, 69, .18);
+}
+
+figcaption {
+  margin-top: 12px;
+  color: var(--texto-suave);
+  font-family: Arial, sans-serif;
+  font-size: .78rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  color: var(--azul-profundo);
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  letter-spacing: -.045em;
+}
+
+h2 {
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(181, 138, 69, .55);
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+.fechas {
+  margin: 0;
+  color: var(--dorado);
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.frase-resumen {
+  padding-left: 18px;
+  border-left: 3px solid var(--dorado);
+  color: var(--azul);
+  font-size: 1.12rem;
+  font-style: italic;
+}
+
+#biografia > p,
+#altares > p,
+#legado > p {
+  color: var(--texto-suave);
+}
+
+.linea-tiempo {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  margin: 30px 0;
+  padding: 0 0 0 28px;
+  list-style: none;
+  border-left: 2px solid #d9c39e;
+}
+
+.hito {
+  position: relative;
+  padding: 18px 22px;
+  background: #fbfaf7;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+.hito::before {
+  position: absolute;
+  top: 25px;
+  left: -36px;
+  width: 14px;
+  height: 14px;
+  background: var(--dorado);
+  border: 3px solid var(--blanco);
+  border-radius: 50%;
+  content: "";
+}
+
+.hito h3 {
+  margin: 0 0 6px;
+  color: var(--dorado);
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.hito p {
+  margin: 0;
+}
+
+#biografia figure,
+#obra figure,
+#altares figure {
+  margin: 28px auto 0;
+}
+
+#biografia figure img,
+#obra figure img,
+#altares figure img {
+  max-height: 360px;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#obra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 28px;
+}
+
+#obra > h2 {
+  grid-column: 1 / -1;
+}
+
+#obra article {
+  padding: 24px;
+  background: #fbfaf7;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+#obra article h3 {
+  margin-top: 0;
+}
+
+#obra li {
+  margin: 9px 0;
+}
+
+blockquote {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: #f5f0e5;
+  border-left: 4px solid var(--dorado);
+  color: var(--azul);
+  font-style: italic;
+}
+
+blockquote footer {
+  margin-top: 10px;
+  color: var(--texto-suave);
+  font-family: Arial, sans-serif;
+  font-size: .8rem;
+  font-style: normal;
+}
+
+#tabla-etapas {
+  width: 100%;
+  margin: 28px 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  font-size: .92rem;
+}
+
+#tabla-etapas caption {
+  margin-bottom: 12px;
+  color: var(--azul);
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+#tabla-etapas th,
+#tabla-etapas td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+}
+
+#tabla-etapas th {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+#tabla-etapas tbody tr:nth-child(even) {
+  background: #f7f8f9;
+}
+
+#tabla-etapas .actual {
+  background: #f5eddf;
+  font-weight: 700;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.tarjeta-legado {
+  padding: 24px;
+  background: #fbfaf7;
+  border: 1px solid var(--borde);
+  border-top: 3px solid var(--dorado);
+  border-radius: 12px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tarjeta-legado:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta-legado h3 {
+  margin: 0 0 8px;
+}
+
+.tarjeta-legado p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+/* Cuestionario interactivo */
+.quiz {
+  margin-top: 42px;
+  padding: clamp(22px, 4vw, 38px);
+  background: linear-gradient(145deg, var(--azul-profundo), var(--azul));
+  border-radius: 16px;
+  color: var(--blanco);
+}
+
+.quiz h3,
+.quiz h4 {
+  color: var(--blanco);
+}
+
+.quiz-intro {
+  max-width: 680px;
+  margin-bottom: 26px;
+}
+
+.etiqueta-seccion {
+  color: #e8c98f;
+  font-family: Arial, sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.quiz-intro h3 {
+  margin: 8px 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.quiz-intro p {
+  margin-bottom: 0;
+  color: #dce5ed;
+}
+
+.quiz-progreso {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #e8c98f;
+  font-family: Arial, sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.barra-progreso {
+  height: 8px;
+  margin: 12px 0 26px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 99px;
+}
+
+#barra-progreso-valor {
+  display: block;
+  width: 20%;
+  height: 100%;
+  background: #e8c98f;
+  border-radius: inherit;
+  transition: width .25s ease;
+}
+
+#pregunta {
+  margin: 0 0 18px;
+  font-size: 1.2rem;
+}
+
+.opciones {
+  display: grid;
+  gap: 10px;
+}
+
+.opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 16px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.opcion:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.opcion:has(input:checked) {
+  background: rgba(232, 201, 143, .16);
+  border-color: #e8c98f;
+}
+
+.opcion input {
+  margin-top: 6px;
+  accent-color: #e8c98f;
+}
+
+.respuesta {
+  min-height: 28px;
+  margin: 14px 0;
+  color: #f5dba9;
+  font-family: Arial, sans-serif;
+  font-size: .92rem;
+}
+
+.boton-quiz {
+  padding: 12px 20px;
+  background: #e8c98f;
+  border: 0;
+  border-radius: 8px;
+  color: var(--azul-profundo);
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.boton-quiz:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #f1d9aa;
+}
+
+.boton-quiz:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.boton-secundario {
+  margin-left: 8px;
+  background: var(--blanco);
+}
+
+.quiz-final {
+  padding: 22px 0 4px;
+}
+
+.quiz-final h4 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+#fuentes {
+  margin-top: 60px;
+  padding: 48px max(24px, calc((100% - 1120px) / 2));
+  background: var(--azul-profundo);
+  color: #e5edf3;
+}
+
+#fuentes h2,
+#fuentes h3 {
+  color: var(--blanco);
+  border-color: var(--dorado);
+}
+
+#fuentes ul {
+  padding-left: 22px;
+}
+
+#fuentes li {
+  margin: 10px 0;
+}
+
+#fuentes a {
+  color: #f1d9aa;
+}
+
+#fuentes address {
+  margin-top: 30px;
+  font-style: normal;
+}
+
+#fuentes address h3 {
+  margin-bottom: 6px;
+}
+
+#fuentes > p:last-child {
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+  font-size: .9rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .encabezado {
+    position: static;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 18px;
+  }
+
+  #menu {
+    justify-content: center;
+    gap: 4px 14px;
+  }
+
+  #menu a {
+    font-size: .8rem;
+  }
+
+  main {
+    width: min(100% - 24px, 620px);
+  }
+
+  main > section {
+    margin: 20px 0;
+    padding: 24px 20px;
+  }
+
+  #inicio {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #inicio figure {
+    grid-row: auto;
+    width: min(240px, 75%);
+    margin: 0 auto 12px;
+  }
+
+  #inicio figure img {
+    max-height: 280px;
+  }
+
+  .frase-resumen {
+    text-align: left;
+  }
+
+  #obra {
+    grid-template-columns: 1fr;
+  }
+
+  #obra > h2 {
+    grid-column: auto;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  #tabla-etapas {
+    font-size: .78rem;
+  }
+
+  #tabla-etapas th,
+  #tabla-etapas td {
+    padding: 10px 8px;
+  }
+
+  .quiz-progreso {
+    font-size: .76rem;
+  }
+
+  .boton-secundario {
+    margin: 10px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
